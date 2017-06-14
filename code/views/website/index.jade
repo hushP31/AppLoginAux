@@ -1,0 +1,46 @@
+﻿extends layout
+block content
+
+    div#wrapper
+        div#sidebar-wrapper
+            ul.sidebar-nav
+                li.sidebar-brand
+                    a(href="#")
+                       Start #{parameters.info_configuracion.university_code}
+                li
+                    a(href="#" ) #{parameters.info_configuracion.departament_code}
+                li
+                    a(href="#") Shortcuts
+                li
+                    a(href="#") Overview
+                li
+                    a(href="#") Events
+                li
+                    a(href="#") About
+                li
+                    a(href="#") Services
+                li
+                    a(href="#") Contact
+                li
+                    a(href="/exit") Exit
+        div#page-content-wrapper
+            div.container-fluid
+                div.row
+                    div.col-lg-12
+                        h1 Has iniciado sesion como: #{user_session.user}
+                        p This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.
+                        p Make sure to keep all page content within the <code>#page-content-wrapper</code>.
+                        a.btn.btn-default#menu-toggle(href="#menu-toggle") Toggle Menu
+    // jQuery
+    script(src="js/jquery.js")
+
+    // Bootstrap Core JavaScript
+    script(src="js/bootstrap.min.js")
+
+   // Menu Toggle Script
+    script(
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    )
